@@ -1,0 +1,42 @@
+<!doctype html>
+<html manifest="bubble.mf">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0" />
+		<link rel="shortcut icon" href="http://duxing.org/favicon.ico" type="image/vnd.microsoft.icon">
+		<title>打泡泡-婴儿游戏</title>
+		<meta name="description" content="专为婴儿定制的小游戏，适宜1岁及以上儿童。">
+		<meta name="keywords" content="打泡泡，小游戏">
+	<style>
+		body{
+			margin:0;
+			padding:0;
+			overflow: hidden;
+			cursor:url("http://sandbox.runjs.cn/uploads/rs/442/bhltdvll/barry-cursor.png"), default;
+		}
+		.rotate {
+			-webkit-transform: rotate(90deg);
+		}
+	</style>
+	</head>
+<body onload="loadAsset();">
+	<div class="website">bubble.duxing.org</div>
+  <canvas id="demoCanvas" width="1000" height="600"></canvas>
+	<script src="http://g8up.qiniudn.com/diy/createjs-2015.05.21.min.js"></script>
+	<script src="http://g8up.qiniudn.com/click-bubble1.0.2.js?v=2016215"></script>
+
+	<script>
+	window.addEventListener('load', function (e) {
+		window.applicationCache.addEventListener('updateready', function (e) {
+			if (window.applicationCache.status == window.applicationCache.UPDATEREADY) {
+				window.applicationCache.swapCache();
+				window.location.reload();
+			}
+		}, false);
+	}, false);
+	</script>
+	<div style="display: none;">
+		<img src="//g8up.qiniudn.com/bubble-weixin-share-icon.png" alt="打泡泡">
+	</div>
+</body>
+</html>
