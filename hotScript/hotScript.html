@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="x-ua-compatable" content="ie=edge">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0" />
+	<title>Simga 的常用脚本</title>
+	<meta name="keywords" content="Sigma 的常用按钮，一键搞定脚本">
+	<meta name="description" content="将网页神器装满你的 Chrome 收藏夹。">
+	<link rel="stylesheet" type="text/css" href="css/list.css">
+</head>
+<body>
+<div id="sigma"></div>
+
+<script src="//cdn.bootcss.com/react/15.1.0/react.js"></script>
+<script src="//cdn.bootcss.com/react/15.1.0/react-dom.min.js"></script>
+<script type="text/javascript">
+var ScriptSnippets = [{
+	title: '收藏到百度网盘',
+	desc: '一键点击，分享文章、图片到百度网盘。',
+	href: "javascript:void (function(d) {var e = d.createElement('script');e.byebj=true;e.src = 'http://s.wenzhang.baidu.com/js/pjt/content_ex/page/bookmark.js?s=bm&amp;t=' + (+new Date());var b = d.getElementsByTagName('body')[0];b.firstChild ? b.insertBefore(e, b.firstChild) : b.appendChild(e);}(document));",
+	buttonTxt: '百度网盘收藏'
+},{
+	title: '隐藏网页图片',
+	desc: '浏览网页时，往往被花里胡哨的图片抢去视觉焦点，或者不希望别人从远处识别自己所看的网页大致内容，用此按钮可快捷隐藏大部分图片。',
+	href: "javascript: void(function() {var i = document.images; for (var m = 0, len = i.length; m < len ; m++) {i[m].style.opacity = '0.1'; } var c = document.querySelectorAll('.bn.Ag.eA'); for (var n = 0, len = c.length; n < len ; n++) {c[n].style.backgroundColor = 'transparent'; } }() /*gplus.to/duxing */ );",
+	buttonTxt: '隐之'
+},{
+	title: '破解路由',
+	desc: '天翼光猫路由自带 WiFi 功能，但默认不开启。而且普通用户进入 192.168.1.1 的光猫管理页面，还看不到这些设置，需要更高权限的帐号来登录、设置才行。这个按钮可以帮你一键登录高权限的用户名和密码，减少因登录超时要重新登录而带来的繁琐。（用户名：telecomadmin ，密码：nE7jA%5m ，隐藏域：16935，在中兴 F660 下测试通过）',
+	href: "javascript:void(function(){try{document.querySelector('#Frm_Username').value='telecomadmin';document.querySelector('#Frm_Password').value='nE7jA%5m';document.querySelector('#Frm_Logintoken').value='16935';dosubmit();}catch(e){window.location='http://192.168.1.1'}})();",
+	buttonTxt: '登录光猫'
+},{
+	title: '人人分享',
+	desc: '一键点击，分享内容到人人网。',
+	href: "javascript:void((function(s,d,e){if(/renren\.com/.test(d.location))return;var f='http://widget.renren.com/dialog/share?link=',u=d.location,l=d.title,p=[e(u),'&title=',e(l),'&from=chrome'].join('');function a(){if(!window.open([f,p].join(''),'xnshare',['toolbar=0,status=0,resizable=1,width=700,height=650,left=',(s.width-700)/2,',top=',(s.height-650)/2].join('')))u.href=[f,p].join('');};if(/Firefox/.test(navigator.userAgent))setTimeout(a,0);else a();})(screen,document,encodeURIComponent));",
+	buttonTxt: '人人分享'
+},{
+	title: '豆瓣分享',
+	desc: '一键点击，分享内容到豆瓣网。',
+	href: "javascript:void(function(){var d=document,e=encodeURIComponent,s1=window.getSelection,s2=d.getSelection,s3=d.selection,s=s1?s1():s2?s2():s3?s3.createRange().text:'',r='http://www.douban.com/recommend/?url='+e(d.location.href)+'&title='+e(d.title)+'&sel='+e(s)+'&v=1',x=function(){if(!window.open(r,'douban','toolbar=0,resizable=1,scrollbars=yes,status=1,width=450,height=330'))location.href=r+'&r=1'};if(/Firefox/.test(navigator.userAgent)){setTimeout(x,0)}else{x()}})();",
+	buttonTxt: '豆瓣分享'
+},{
+	title: 'FISP数据模拟',
+	desc: 'FISP前端集成开发框架的测试数据模拟。',
+	href: "javascript: void function() {var d = new Date();d.setFullYear(d.getFullYear() + 1);document.cookie='FIS_DEBUG_DATA=4f10e208f47bfb4d35a5e6f115a6df1a;path=/;expires=' + d.toGMTString() + '';location.reload(); }();",
+	buttonTxt: 'FISP数据模拟'
+}];
+</script>
+<script src="./build/hotScript.js"> </script>
+</body>
+</html>

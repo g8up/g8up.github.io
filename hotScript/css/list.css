@@ -1,0 +1,105 @@
+body{
+	padding:0;
+	margin:0;
+	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	color:#222;
+    font-family: "微软雅黑","黑体";
+}
+a{
+	text-decoration: none;
+}
+ul{
+	list-style: none;
+	margin:0;
+	padding:0;
+}
+h1,h2{
+	margin:0.2em auto;
+}
+a.anchor {
+	display: none;
+	margin-left: .7em;
+	font-weight: lighter;
+	font-size: 85%;
+}
+a.anchor:before {
+	content: "\00B6";
+}
+h2:hover a.anchor{
+	display: inline;
+	color: #bbb;
+}
+.container{
+	max-width: 800px;
+	min-width: 400px;
+	margin:0 auto;
+	padding:10px;
+}
+/*@media screen and (max-width:1024px){
+	.container{
+		min-width: initial;
+	}
+}*/
+.page-title{
+	border-bottom: 1px solid #aaa;
+}
+.script-list li{
+	border-bottom: 1px solid #ccc;
+	opacity: 0.8;
+	transition:all 0.2s;
+}
+.script-list li:hover{
+	background-color: aliceblue;
+	opacity: 1;
+}
+.script-list li:hover a.bookmark{
+	opacity: 1;
+}
+/*.script-list li:last-child{
+	border:none;
+}*/
+.item{
+	padding:10px;
+}
+.desc{
+	font: 14px/20px "微软雅黑";
+	letter-spacing: 0.04em;
+}
+.fav{
+	padding:10px 0;
+}
+a.bookmark,a.bookmark:active{
+	display: inline-block;
+	padding: 5px;
+	border:1px dashed #999;
+	border-radius: 4px;
+	background-color: #ddd;
+	text-decoration: none;
+	cursor: move;
+	-webkit-user-drag:element;
+	color:#53805A;
+	box-shadow: 2px 2px 2px #aaa;
+	opacity:0.5;
+	transition:all 0.5s;
+}
+a.bookmark:hover{
+	border-color: #555;
+}
+a.bookmark::after{
+	content:" ←拖放到Chrome书签栏";
+	color:#fff;
+    text-shadow: 1px 1px 1px gray;
+}
+.footer{
+	text-align: right;
+	padding: 10px;
+}
+.footer cite:hover{
+	-webkit-animation:sigma 1s;
+}
+.footer cite a{
+	color:gray;
+}
+@-webkit-keyframes sigma{
+	100%{transform:rotateZ(360deg);}
+}
