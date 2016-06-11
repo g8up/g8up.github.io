@@ -7,6 +7,16 @@
 		<title>打泡泡-婴儿游戏</title>
 		<meta name="description" content="专为婴儿定制的小游戏，适宜1岁及以上儿童。">
 		<meta name="keywords" content="打泡泡，小游戏">
+		<script>
+		var _hmt = _hmt || [];
+		(function() {
+		  var hm = document.createElement("script");
+		  hm.src = "//hm.baidu.com/hm.js?1acdfa5410fac881da8707edf603a30d";
+		  var s = document.getElementsByTagName("script")[0];
+		  s.parentNode.insertBefore(hm, s);
+		})();
+		</script>
+
 	<style>
 		body{
 			margin:0;
@@ -17,11 +27,15 @@
 		.rotate {
 			-webkit-transform: rotate(90deg);
 		}
-		.website{ color: gray; }
+		.website{
+			color:gray;
+			padding:0 5px;
+			position: absolute;
+		}
 	</style>
 	</head>
 <body onload="loadAsset();">
-	<div class="website">bubble.duxing.org</div>
+	<div class="website">http://g8up.cn/bubble</div>
   	<canvas id="demoCanvas" width="1000" height="600"></canvas>
 	<script src="http://g8up.qiniudn.com/diy/createjs-2015.05.21.min.js"></script>
 	<script src="http://g8up.qiniudn.com/click-bubble1.0.2.js?v=2016215"></script>
