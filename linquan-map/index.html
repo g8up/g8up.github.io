@@ -1,0 +1,103 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>临泉公交线路图</title>
+		<meta name="description" content="临泉公交线路图">
+		<meta name="keywords" content="临泉公交线路图,临泉地图,百度地图 API">
+		<link href="http://libs.baidu.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">
+		<style>
+			.sidebar{
+				background-color: #f4f4f4;
+				min-height: 100vh;
+			}
+			.right-side{
+				position: fixed;
+				right: 0;
+			}
+			#map{
+				width:100%;
+				height: 100%;
+				height:100vh;
+			}
+			.note{
+				font-size:12px;
+			}
+			.feedback a{
+				display: inline-block;
+				width: 16px !important;
+				height: 16px !important;
+				line-height: 100px;
+				overflow: hidden;
+				vertical-align: middle;
+				cursor: pointer;
+				text-decoration: none;
+				color: #777;
+				background-color: transparent;
+				background: url("http://static.duoshuo.com/images/service-icons-color.png") no-repeat;
+			}
+			.feedback .qzone{
+				background-position: 0 -128px;
+
+			}
+			.feedback .tieba{
+				background-position: 0 -208px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="sidebar col-md-2">
+			<h3>临泉公交路线图</h3>
+			<nav class="list-group">
+				<a class="list-group-item" href="javascript:void(0);" data-index="1">
+					<div class="list-group-item-heading">1路</div>
+				</a>
+				<a class="list-group-item active" href="javascript:void(0);" data-index="2">
+					<div class="list-group-item-heading">2路</div>
+				</a>
+				<a class="list-group-item" href="javascript:void(0);" data-index="3">
+					<div class="list-group-item-heading">3路(开发中)</div>
+				</a>
+				<!--
+				<a class="list-group-item" href="javascript:void(0);" data-index="4">
+					<div class="list-group-item-heading">4路</div>
+				</a>
+				<a class="list-group-item" href="javascript:void(0);" data-index="5">
+					<div class="list-group-item-heading">5路</div>
+				</a>
+				<a class="list-group-item" href="javascript:void(0);" data-index="6">
+					<div class="list-group-item-heading">6路</div>
+				</a>
+				-->
+				<a class="list-group-item" href="javascript:void(0);" data-index="7">
+					<div class="list-group-item-heading">7路</div>
+				</a>
+			</nav>
+			<div class="note text-muted">
+				<p>关于：</p>
+				<p>离乡多年，翻天巨变，回到熟悉又陌生的家乡，温暖依然。想必很多游子和我一样。于是乎制作此图，以助游子畅游全城~</p>
+				<p>广而告之：</p>
+				<p>本页面信息为试用版，有位置标注不准确的站点，还望老乡们积极反馈。</p>
+				<p class="feedback">反馈：
+					<a class="qzone" href="http://user.qzone.qq.com/87026984/mood/28ed2f0530e34e5506a00b00." target="_blank" title="QQ空间"></a>
+					<a class="tieba" href="http://tieba.baidu.com/p/3754322045" target="_blank" title="百度贴吧"></a>
+				</p>
+				<p>技术支持：<a href="mailto:dodo.cpp@qq.com?subject=【问题反馈】临泉公交线路图" target="_blank"><span class="glyphicon glyphicon-envelope"></span></a></p>
+			</div>
+		</div>
+		<section class="right-side col-md-10">
+			<div id="map"></div>
+		</section>
+		<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+		<script src="js/map.js" type="text/javascript"></script>
+		<script>
+		var _hmt = _hmt || [];
+		(function() {
+		  var hm = document.createElement("script");
+		  hm.src = "//hm.baidu.com/hm.js?1acdfa5410fac881da8707edf603a30d";
+		  var s = document.getElementsByTagName("script")[0];
+		  s.parentNode.insertBefore(hm, s);
+		})();
+		</script>
+	</body>
+</html>
