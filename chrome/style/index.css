@@ -1,0 +1,112 @@
+* {
+	padding: 0;
+	margin: 0;
+	font-style: normal;
+	color: #595959;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif, "黑体";
+	font-size: 13px;
+}
+a {
+	text-decoration: none;
+	color: #4C90F9;
+	font-weight: bold;
+}
+h1, h3, h1 > a {
+	color: #333;
+}
+body {
+	-webkit-user-select: none;
+	-webkit-touch-callout: none;
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+	-webkit-font-smoothing: antialiased;
+	background: #eff1f3;
+	padding-bottom: 7px;
+	font-weight: normal;
+}
+body > section {
+	margin: 10px 6px;
+	background: white;
+	-webkit-box-shadow: 0px 1px 1px rgba(0, 0, 0, .11);
+	border: #e5e8e8 solid 0.5px;
+	border-radius: 2px;
+}
+section > h1 {
+	padding: 6px 12px 6px 12px;
+	line-height: 24px;
+	position: relative;
+}
+section > h1:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 100%;
+	left: 2%;
+	width: 96%;
+	height: 1px;
+	background: #e0e0e0;
+}
+section > h1:last-child:before {
+	display: none;
+}
+section > h1 > b {
+	font-size: 11px;
+	color: #4c90f9;
+	float: right;
+	background: #f5f7fb;
+	-webkit-border-radius: 18px;
+	line-height: 18px;
+	margin: 2px 0;
+	padding: 2px 6px 1px;
+}
+section > article {
+	padding: 9px 12px 9px 12px;
+	line-height: 18px;
+	position: relative;
+	word-break: break-all;
+	word-wrap: break-word;
+}
+section > article:before {
+	content: "";
+	display: block;
+	position: absolute;
+	bottom: -1px;
+	left: 2%;
+	width: 96%;
+	height: 1px;
+	background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAACCAYAAACZgbYnAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAABVJREFUeNpi/v//PwPju4+f/gMEGAAhgwbSjfJp9AAAAABJRU5ErkJggg==) 0 100%;
+	background-size: 10px 1px;
+}
+section > article:last-child:before {
+	display: none;
+}
+section > article > b {
+	font-size: 11px;
+	color: #4c90f9;
+	float: right;
+	background: #f5f7fb;
+	border-radius: 18px;
+	line-height: 18px;
+	margin: -2px 0 2px 0;
+	padding: 2px 6px 0;
+}
+section > article > p {
+	color: #999;
+}
+section strong {
+	font-size: 12px;
+	float: right;
+	-webkit-border-radius: 2px;
+	line-height: 22px;
+	padding: 1px 8px 0;
+	background-image: -webkit-gradient(linear, center top, center bottom, from(#fff), to(#EBEBEB));
+	border: 1px solid #bcc0c1;
+}
+.link {
+	float: right;
+}
+.link + .link{
+	margin-left: 5px;
+}
+.inline-install[data-appid^="{appid}"]{
+	display: none;
+}
