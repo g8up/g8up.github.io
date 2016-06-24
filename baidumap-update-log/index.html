@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>百度地图 Javascript API 更新时间表</title>
+	<meta name="description" content="百度地图 Javascript API 更新时间表">
+	<meta name="author" content="http://g8up.cn/">
+	<link rel="shortcut icon" href="http://duxing.org/favicon.ico" type="image/x-icon">
+	<link href="http://libs.baidu.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">
+	<style>
+		.text-muted{
+			color: #999;
+		}
+		.container{
+			margin-top: 15px;
+		}
+		[v-cloak]{display:none;}
+	</style>
+	<script>
+	var _hmt = _hmt || [];
+	(function() {
+	  var hm = document.createElement("script");
+	  hm.src = "//hm.baidu.com/hm.js?1acdfa5410fac881da8707edf603a30d";
+	  var s = document.getElementsByTagName("script")[0];
+	  s.parentNode.insertBefore(hm, s);
+	})();
+	</script>
+</head>
+<body>
+<div class="container" id="app">
+	<div class="row">
+		<div class="col-md-6 col-md-push-3">
+			<div class="panel panel-default">
+				<div class="panel-heading">百度地图 Javascript API 更新时间表<span class="text-muted">（非官方统计，仅供参考）</span></div>
+
+				<ul id="list" class="list-group">
+					<li v-cloak v-for="item in list" class="list-group-item" v-text="format( item.updatetime )"></li>
+					<li v-if="list.length < 1" class="list-group-item">数据加载中...</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+<script src='http://sandbox.runjs.cn/uploads/rs/442/bhltdvll/firebase2.4.2.js'></script>
+<script src="http://sandbox.runjs.cn/uploads/rs/442/bhltdvll/vue.js"></script>
+<script src="http://libs.cdnjs.net/moment.js/2.8.3/moment.min.js"></script>
+<script>
+	;(function () {
+		new Vue({
+			el:'#app',
+			data:{
+				list:[]
+			},
+			methods:{
+				format: function( time ){
+					return moment( time, 'YYYY-MM-DD HH:mm:ss').format('YYYY-MM-DD HH:mm:ss')
+				}
+			},
+			ready: function(){
+				var me = this;
+				var myDataRef = new Firebase('https://baidu-map-update-log.firebaseio.com/');
+				myDataRef.on('child_added', function(snapshot) {
+					var message = snapshot.val();
+					me.list.unshift( message );
+				});
+			}
+		});
+	})();
+</script>
+</body>
+</html>
