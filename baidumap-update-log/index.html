@@ -42,9 +42,9 @@
 </div>
 <script src='http://sandbox.runjs.cn/uploads/rs/442/bhltdvll/firebase2.4.2.js'></script>
 <script src="http://sandbox.runjs.cn/uploads/rs/442/bhltdvll/vue.js"></script>
-<script src="http://libs.cdnjs.net/moment.js/2.8.3/moment.min.js"></script>
 <script>
 	;(function () {
+
 		new Vue({
 			el:'#app',
 			data:{
@@ -52,7 +52,17 @@
 			},
 			methods:{
 				format: function( time ){
-					return moment( time, 'YYYY-MM-DD HH:mm:ss').format('YYYY-MM-DD HH:mm:ss')
+					time = time + '';
+					if( time ){
+						var year = time.slice(0,4);
+						var month = time.slice(4, 6);
+						var date = time.slice( 6, 8);
+						return [
+							[year, month, date].join('-'),
+ 							time.slice(-6).replace(/\B(?=(\d{2})+(?!\d))/g, ":")
+						].join(' ');
+					}
+					return time;
 				}
 			},
 			ready: function(){
