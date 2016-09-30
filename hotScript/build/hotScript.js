@@ -3,28 +3,39 @@
 "use strict";
 
 var Snippet = new React.createClass({
-	render: function render() {
+	render: function () {
 		return React.createElement(
-			"div",
-			{ className: "item" },
+			"div", {
+				className: "item"
+			},
 			React.createElement(
-				"h2",
-				{ className: "script-title" },
-				React.createElement("a", { name: "baidu-share" }),
+				"h2", {
+					className: "script-title"
+				},
+				React.createElement("a", {
+					name: this.props.data.id
+				}),
 				this.props.data.title,
-				React.createElement("a", { href: "#baidu-share", className: "anchor" })
+				React.createElement("a", {
+					href: '#' + this.props.data.id,
+					className: "anchor"
+				})
 			),
 			React.createElement(
-				"div",
-				{ className: "desc" },
+				"div", {
+					className: "desc"
+				},
 				this.props.data.desc
 			),
 			React.createElement(
-				"div",
-				{ className: "fav" },
+				"div", {
+					className: "fav"
+				},
 				React.createElement(
-					"a",
-					{ href: this.props.data.href, className: "bookmark" },
+					"a", {
+						href: this.props.data.href,
+						className: "bookmark"
+					},
 					this.props.data.buttonTxt
 				)
 			)
@@ -37,33 +48,41 @@ var List = new React.createClass({
 		var id = 0;
 		var list = this.props.data.map(function (snippet) {
 			return React.createElement(
-				"li",
-				{ key: id++ },
-				React.createElement(Snippet, { data: snippet })
+				"li", {
+					key: id++
+				},
+				React.createElement(Snippet, {
+					data: snippet
+				})
 			);
 		});
 		return React.createElement(
-			"div",
-			{ className: "container" },
+			"div", {
+				className: "container"
+			},
 			React.createElement(
-				"h1",
-				{ className: "page-title" },
+				"h1", {
+					className: "page-title"
+				},
 				"Sigma的常用按钮"
 			),
 			React.createElement(
-				"ul",
-				{ className: "script-list" },
+				"ul", {
+					className: "script-list"
+				},
 				list
 			),
 			React.createElement(
-				"div",
-				{ className: "footer" },
+				"div", {
+					className: "footer"
+				},
 				React.createElement(
 					"cite",
 					null,
 					React.createElement(
-						"a",
-						{ href: "http://g8up.cn" },
+						"a", {
+							href: "http://g8up.cn"
+						},
 						"Sigma"
 					)
 				)
@@ -72,4 +91,6 @@ var List = new React.createClass({
 	}
 });
 
-ReactDOM.render(React.createElement(List, { data: ScriptSnippets }), document.querySelector('#sigma'));
+ReactDOM.render(React.createElement(List, {
+	data: ScriptSnippets
+}), document.querySelector('#sigma'));
