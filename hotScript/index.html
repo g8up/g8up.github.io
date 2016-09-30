@@ -31,7 +31,7 @@ var ScriptSnippets = [{
 	buttonTxt: '百度网盘收藏'
 },{
 	title: '隐藏网页图片',
-	desc: '浏览网页时，往往被花里胡哨的图片抢去视觉焦点，或者不希望别人从远处识别自己所看的网页大致内容，用此按钮可快捷隐藏大部分图片。',
+	desc: '浏览网页时，往往被花里胡哨的图片抢去视觉焦点，用此按钮可快捷隐藏大部分图片。',
 	href: "javascript: void(function() {var i = document.images; for (var m = 0, len = i.length; m < len ; m++) {i[m].style.opacity = '0.1'; } var c = document.querySelectorAll('.bn.Ag.eA'); for (var n = 0, len = c.length; n < len ; n++) {c[n].style.backgroundColor = 'transparent'; } }() /*gplus.to/duxing */ );",
 	buttonTxt: '隐之'
 },{
@@ -54,6 +54,11 @@ var ScriptSnippets = [{
 	desc: 'FISP前端集成开发框架的测试数据模拟。',
 	href: "javascript: void function() {var d = new Date();d.setFullYear(d.getFullYear() + 1);document.cookie='FIS_DEBUG_DATA=4f10e208f47bfb4d35a5e6f115a6df1a;path=/;expires=' + d.toGMTString() + '';location.reload(); }();",
 	buttonTxt: 'FISP数据模拟'
+},{
+	title: 'shiniv hook',
+	desc: '捕获 shiniv 页面的 rocket 信息',
+	href: "javascript:void( (function(){/** * 捕获页面（http://douyu.shiniv.com/）中新增的火箭信息，转送给斗鱼叉叉(> V2.0.9) * @version 1.0.0 * @usage 需要[制作成 Chrome 书签](http://pan.baidu.com/s/1skgEosX) * @create 2016-09-29 00:37:42 */ var msg = document.querySelector('#message'); msg.removeEventListener('DOMNodeInserted', window.__xx__fishfork__hookRocket) function getRoomId( el ){var a = el.querySelector('a'); var href = a.href; var ret = href.match(/com\/(\d*)\?/); if( ret.length ){return ret[1]; } } function postMsg( roomId ){chrome.runtime.sendMessage('kieadkdifhfdpooogdnanljolkekceij', {action: 'rocket', from: 'shiniv', msg: '我襙，二踢脚！', roomId: roomId }, function(){console.log('fishfork', roomId, new Date() ); }); } __xx__fishfork__hookRocket = function(ev){var el = ev.target; if( el.tagName && el.tagName.toLowerCase() === 'blockquote' && el.className !== 'nonerocket' ){var roomId = getRoomId( el ); if( roomId ){postMsg(roomId); } } } msg.addEventListener('DOMNodeInserted', __xx__fishfork__hookRocket , false); })() );",
+	buttonTxt: 'shiniv hook'
 }];
 </script>
 <script src="./build/hotScript.js"> </script>
