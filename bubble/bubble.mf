@@ -3,7 +3,7 @@ CACHE MANIFEST
 
 CACHE:
 http://g8up.qiniudn.com/diy/createjs-2015.05.21.min.js
-http://g8up.qiniudn.com/click-bubble1.0.2.js
+http://g8up.qiniudn.com/diy/click-bubble.js
 http://g8up.qiniudn.com/clap.gif
 http://g8up.qiniudn.com/bo.wav
 http://g8up.qiniudn.com/select.wav
