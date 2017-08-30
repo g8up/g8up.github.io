@@ -4,8 +4,8 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0" />
 		<link rel="shortcut icon" href="http://duxing.org/favicon.ico" type="image/vnd.microsoft.icon">
-		<title>打泡泡-婴儿游戏</title>
-		<meta name="description" content="专为婴儿定制的小游戏，适宜1岁及以上儿童。">
+		<title>打泡泡 - 婴儿游戏</title>
+		<meta name="description" content="专为婴儿定制的小游戏，适宜3岁以下儿童。">
 		<meta name="keywords" content="打泡泡，小游戏">
 		<script>
 		var _hmt = _hmt || [];
@@ -35,7 +35,7 @@
 	</style>
 	</head>
 <body onload="loadAsset();">
-	<div class="website">http://g8up.cn/bubble</div>
+	<div class="website">g8up.cn/bubble</div>
   	<canvas id="demoCanvas" width="1000" height="600"></canvas>
 	<script src="http://g8up.qiniudn.com/diy/createjs-2015.05.21.min.js"></script>
 	<script src="http://g8up.qiniudn.com/diy/click-bubble.js?v=20161002"></script>
@@ -48,6 +48,9 @@
 				window.location.reload();
 			}
 		}, false);
+		setTimeout(function(){
+			document.querySelector('.website').style.display="none";
+		}, 3e3);
 	}, false);
 	</script>
 	<div style="display: none;">

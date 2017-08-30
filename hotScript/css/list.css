@@ -45,15 +45,10 @@ h2:hover a.anchor{
 }
 .script-list li{
 	border-bottom: 1px solid #ccc;
-	opacity: 0.8;
 	transition:all 0.2s;
 }
 .script-list li:hover{
-	background-color: aliceblue;
-	opacity: 1;
-}
-.script-list li:hover a.bookmark{
-	opacity: 1;
+	background-color: #eee;
 }
 /*.script-list li:last-child{
 	border:none;
@@ -68,9 +63,10 @@ h2:hover a.anchor{
 .fav{
 	padding:10px 0;
 }
-a.bookmark,a.bookmark:active{
+a.bookmark,
+a.bookmark:active{
 	display: inline-block;
-	padding: 5px;
+	padding: 5px 10px;
 	border:1px dashed #999;
 	border-radius: 4px;
 	background-color: #ddd;
@@ -78,9 +74,8 @@ a.bookmark,a.bookmark:active{
 	cursor: move;
 	-webkit-user-drag:element;
 	color:#53805A;
-	box-shadow: 2px 2px 2px #aaa;
-	opacity:0.5;
-	transition:all 0.5s;
+	box-shadow: 2px 2px 3px #aaa;
+	transition:all 0.2s;
 }
 a.bookmark:hover{
 	border-color: #555;
