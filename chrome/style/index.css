@@ -1,21 +1,13 @@
-* {
+html {
 	padding: 0;
 	margin: 0;
 	font-style: normal;
-	color: #595959;
-	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif, "黑体";
-	font-size: 13px;
-}
-a {
-	text-decoration: none;
-	color: #4C90F9;
-	font-weight: bold;
-}
-h1, h3, h1 > a {
 	color: #333;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif, "黑体";
 }
 body {
 	-webkit-user-select: none;
+	user-select: none;
 	-webkit-touch-callout: none;
 	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 	-webkit-font-smoothing: antialiased;
@@ -23,17 +15,25 @@ body {
 	padding-bottom: 7px;
 	font-weight: normal;
 }
+a {
+	text-decoration: none;
+	color: #4C90F9;
+	font-weight: bold;
+}
+
 body > section {
-	margin: 10px 6px;
+	margin: 0.1333rem 0.05rem;
 	background: white;
 	-webkit-box-shadow: 0px 1px 1px rgba(0, 0, 0, .11);
+	box-shadow: 0px 1px 1px rgba(0, 0, 0, .11);
 	border: #e5e8e8 solid 0.5px;
 	border-radius: 2px;
 }
 section > h1 {
-	padding: 6px 12px 6px 12px;
+	padding: 0.08rem 0.16rem 0.08rem 0.16rem;
 	line-height: 24px;
 	position: relative;
+	font-size: 0.15rem;
 }
 section > h1:before {
 	content: "";
@@ -53,18 +53,21 @@ section > h1 > b {
 	color: #4c90f9;
 	float: right;
 	background: #f5f7fb;
-	-webkit-border-radius: 18px;
-	line-height: 18px;
+	-webkit-border-radius: 0.24rem;
+	border-radius: 0.24rem;
+	line-height: 0.24rem;
 	margin: 2px 0;
-	padding: 2px 6px 1px;
+	padding: 2px 0.08rem 1px;
 }
 section > article {
-	padding: 9px 12px 9px 12px;
-	line-height: 18px;
+	padding: 0.12rem 0.16rem 0.12rem 0.16rem;
+	line-height: 0.24rem;
 	position: relative;
 	word-break: break-all;
 	word-wrap: break-word;
+	font-size: 0.13rem;
 }
+
 section > article:before {
 	content: "";
 	display: block;
@@ -79,28 +82,25 @@ section > article:before {
 section > article:last-child:before {
 	display: none;
 }
-section > article > b {
+/* section article  b {
 	font-size: 11px;
+	font-size: 0.14666666666666667rem;
 	color: #4c90f9;
 	float: right;
 	background: #f5f7fb;
-	border-radius: 18px;
-	line-height: 18px;
+	border-radius: 0.24rem;
+	line-height: 0.24rem;
 	margin: -2px 0 2px 0;
-	padding: 2px 6px 0;
+	padding: 2px 0.08rem 0;
+} */
+section > article .name {
+	color: #666;
 }
-section > article > p {
+section > article > .desc {
 	color: #999;
+	font-size: 0.12rem;
 }
-section strong {
-	font-size: 12px;
-	float: right;
-	-webkit-border-radius: 2px;
-	line-height: 22px;
-	padding: 1px 8px 0;
-	background-image: -webkit-gradient(linear, center top, center bottom, from(#fff), to(#EBEBEB));
-	border: 1px solid #bcc0c1;
-}
+
 .link {
 	float: right;
 }
