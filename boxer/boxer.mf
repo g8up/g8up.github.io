@@ -1,0 +1,33 @@
+CACHE MANIFEST
+#2017年9月11日 01:12:53
+
+CACHE:
+http://g8up.qiniudn.com/boxer/are.js
+http://g8up.qiniudn.com/boxer/a.mp3
+http://g8up.qiniudn.com/boxer/b.mp3
+http://g8up.qiniudn.com/boxer/c.mp3
+http://g8up.qiniudn.com/boxer/d.mp3
+http://g8up.qiniudn.com/boxer/e.mp3
+http://g8up.qiniudn.com/boxer/f.mp3
+http://g8up.qiniudn.com/boxer/g.mp3
+http://g8up.qiniudn.com/boxer/h.mp3
+http://g8up.qiniudn.com/boxer/i.mp3
+http://g8up.qiniudn.com/boxer/j.mp3
+http://g8up.qiniudn.com/boxer/k.mp3
+http://g8up.qiniudn.com/boxer/l.mp3
+http://g8up.qiniudn.com/boxer/m.mp3
+http://g8up.qiniudn.com/boxer/n.mp3
+http://g8up.qiniudn.com/boxer/o.mp3
+http://g8up.qiniudn.com/boxer/p.mp3
+http://g8up.qiniudn.com/boxer/q.mp3
+http://g8up.qiniudn.com/boxer/r.mp3
+http://g8up.qiniudn.com/boxer/s.mp3
+http://g8up.qiniudn.com/boxer/t.mp3
+http://g8up.qiniudn.com/boxer/u.mp3
+http://g8up.qiniudn.com/boxer/v.mp3
+http://g8up.qiniudn.com/boxer/w.mp3
+http://g8up.qiniudn.com/boxer/x.mp3
+http://g8up.qiniudn.com/boxer/y.mp3
+
+NETWORK:
+*
