@@ -28,6 +28,7 @@ http://g8up.qiniudn.com/boxer/v.mp3
 http://g8up.qiniudn.com/boxer/w.mp3
 http://g8up.qiniudn.com/boxer/x.mp3
 http://g8up.qiniudn.com/boxer/y.mp3
+http://g8up.qiniudn.com/boxer/z.mp3
 
 NETWORK:
 *
