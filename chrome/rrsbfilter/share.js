@@ -1,13 +1,13 @@
 ﻿//shareIcon
 var share = window.share ||{};
 share.getShareUrl = function(){
-	return 'http://duxing.org/chrome/rrsbfilter/';
+	return 'http://g8up.cn/chrome/rrsbfilter/';
 }
 share.getPic = function(){
-	return 'http://duxing.org/chrome/rrsbfilter/weixin_rrsbfilter.jpg';
+	return 'http://g8up.cn/chrome/rrsbfilter/weixin_rrsbfilter.jpg';
 };
 share.getPics = function(){
-	return 'http://duxing.org/chrome/rrsbfilter/weixin_rrsbfilter.jpg' + '|' + 'http://duxing.org/chrome/rrsbfilter/logo128.png';
+	return 'http://g8up.cn/chrome/rrsbfilter/weixin_rrsbfilter.jpg' + '|' + 'http://g8up.cn/chrome/rrsbfilter/logo128.png';
 };
 
 share.getWords = function(){
