@@ -1,32 +1,37 @@
 ﻿<!DOCTYPE html>
 <html manifest="boxer.mf">
+
 <head>
-    <meta chaset="utf8">
-    <title>小霸王 打字游戏</title>
-    <meta name="description" content="老婆你能练练你的爪不？">
-    <style>
+  <meta chaset="utf8">
+  <title>小霸王 打字游戏</title>
+  <meta name="description" content="老婆你能练练你的爪不？">
+  <style>
     body{
-        margin:0;
-        padding:0;
-        min-height: 100vh;
+      margin:0;
+      padding:0;
+      min-height: 100vh;
     }
     #ourCanvas{
-        border:1px solid #ccc;
-        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+      border:1px solid #ccc;
+      -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
     }
     </style>
 </head>
-<body>
-    <div style="text-align:center;">
-    <canvas id="ourCanvas"></canvas>
-    </div>
-    <script src="http://cdn.chromedevtools.com/boxer/are.js"></script>
-    <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
-    <script>
-        var AUDIO_HOST_PREFIX = 'http://cdn.chromedevtools.com/boxer';
-    </script>
-    <script src="http://cdn.chromedevtools.com/boxer/entry.js" type="module"></script>
 
-    <script src="http://cdn.chromedevtools.com/boxer/bundle.js" nomodule></script>
+<body>
+  <div style="text-align:center;">
+    <canvas id="ourCanvas"></canvas>
+  </div>
+
+  <script src="http://cdn.chromedevtools.com/boxer/are.js"></script>
+  <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+
+  <script>
+    var AUDIO_HOST_PREFIX = 'http://cdn.chromedevtools.com/boxer';
+  </script>
+
+  <script src="http://cdn.chromedevtools.com/boxer/entry.js" type="module"></script>
+  <script src="http://cdn.chromedevtools.com/boxer/bundle.js" nomodule></script>
 </body>
+
 </html>
