@@ -16,38 +16,40 @@
 		})();
 		</script>
 
-	<style>
-		body{
-			margin:0;
-			padding:0;
-			overflow: hidden;
-			cursor:url("https://sandbox.runjs.cn/uploads/rs/442/bhltdvll/barry-cursor.png"), default;
-		}
-		.website{
-			color:gray;
-			padding:0 5px;
-			position: absolute;
-		}
-	</style>
+		<style>
+			body{
+				margin:0;
+				padding:0;
+				overflow: hidden;
+				cursor:url("https://sandbox.runjs.cn/uploads/rs/442/bhltdvll/barry-cursor.png"), default;
+			}
+			.website{
+				color:gray;
+				padding:0 5px;
+				position: absolute;
+			}
+		</style>
 	</head>
 <body onload="loadAsset();">
 	<div class="website">g8up.cn/bubble</div>
-  	<canvas id="demoCanvas" width="1000" height="600"></canvas>
+	<canvas id="demoCanvas" width="1000" height="600"></canvas>
+
 	<script src="http://cdn.chromedevtools.com/diy/createjs-2015.05.21.min.js"></script>
-	<script src="http://cdn.chromedevtools.com/diy/click-bubble.js?v=20181125"></script>
+	<script src="http://cdn.chromedevtools.com/diy/click-bubble.js?v=20181228"></script>
 
 	<script>
-	window.addEventListener('load', function (e) {
-		window.applicationCache && window.applicationCache.addEventListener('updateready', function (e) {
-			if (window.applicationCache.status == window.applicationCache.UPDATEREADY) {
-				window.applicationCache.swapCache();
-				window.location.reload();
-			}
+		window.addEventListener('load', function (e) {
+			window.applicationCache && window.applicationCache.addEventListener('updateready', function (e) {
+				if (window.applicationCache.status == window.applicationCache.UPDATEREADY) {
+					window.applicationCache.swapCache();
+					window.location.reload();
+				}
+			}, false);
+
+			setTimeout(function(){
+				document.querySelector('.website').style.display="none";
+			}, 3e3);
 		}, false);
-		setTimeout(function(){
-			document.querySelector('.website').style.display="none";
-		}, 3e3);
-	}, false);
 	</script>
 	<div style="display: none;">
 		<img src="//cdn.chromedevtools.com/bubble-weixin-share-icon.png" alt="打泡泡">
