@@ -23,8 +23,17 @@
     <canvas id="ourCanvas"></canvas>
   </div>
 
+  <script>
+    (function (params) {
+      var w = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+      var h = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
+      var c = document.querySelector('#ourCanvas');
+      c.setAttribute('width', w + 'px');
+      c.setAttribute('height', h + 'px');
+    })();
+  </script>
+
   <script src="http://cdn.chromedevtools.com/boxer/are.js"></script>
-  <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
 
   <script>
     var AUDIO_HOST_PREFIX = 'http://cdn.chromedevtools.com/boxer';
