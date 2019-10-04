@@ -15,6 +15,7 @@
       }
       .top{
         padding: 15px 0;
+        line-height: 36px;
       }
       .gen{
         padding:6px 40px;
@@ -24,6 +25,7 @@
       }
       .v-question {
         font-size: 20px;
+        display: flex;
       }
       .first,
       .second{
@@ -34,7 +36,10 @@
       .v-question input {
         border: none;
         border-bottom: 1px solid #f1f1f1;
-        padding: 10px 5px;
+        /* padding: 10px 5px; */
+        box-sizing: border-box;
+        padding-left: 5px;
+        margin-left: 0.5em;
       }
     </style>
 		<template id="question">
@@ -64,7 +69,7 @@
 				</div>
 				<div class="col-md-3 col-xs-3">
 					<span class="badge">
-						<span style="color: #77f146;" v-text="finished"></span>/
+						<span style="color: #77f146;" v-text="finished"></span> /
 						<span v-text="history.length"></span>
 					</span>
 				</div>
