@@ -2,7 +2,7 @@
 <html lang="zh-CN">
 	<head>
 		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no;">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 		<meta http-equiv="X-UA-Compatible" content="ie=edge">
 		<title>算术 - 虐娃神器</title>
     <meta name="description" content="专注于虐5～7岁儿童！">
@@ -47,6 +47,7 @@
         box-sizing: border-box;
         padding-left: 5px;
         margin-left: 0.5em;
+        flex: 1;
       }
     </style>
 		<template id="question">
@@ -90,15 +91,15 @@
 				</div>
 			</div>
 			<div class="row">
-				<div class="question ">
-					<!-- <Question
-:first="first"
-:second="second"
-:operation="operation"
-:result="result"
-/> -->
-				</div>
-				<div class="col-md-10 list">
+				<!--<div class="question ">
+          <Question
+            :first="first"
+            :second="second"
+            :operation="operation"
+            :result="result"
+          />
+				</div>-->
+				<div class="col-md-12 list">
 					<ul
 						class="list-group">
 						<li

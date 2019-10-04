@@ -50,6 +50,7 @@ const Question = Vue.component('Question', {
     },
   },
 });
+
 new Vue({
   el: '#app',
   components: {
@@ -83,6 +84,7 @@ new Vue({
         input: '',
       });
     },
+
     record({
       first,
       second,
@@ -98,7 +100,6 @@ new Vue({
         result,
         input,
       });
-      this.$set(this.$data, 'history', this.history);
     },
 
     enter(e){
@@ -112,7 +113,7 @@ new Vue({
   },
   created() {
     this.gen();
-  }
+  },
 });
 /*
 const hideBadge = (doc) => {
