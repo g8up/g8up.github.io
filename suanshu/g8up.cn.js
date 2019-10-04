@@ -45,10 +45,10 @@ const Question = Vue.component('Question', {
     keypress(e) {
       if (e.which === 13) {
         console.log('enter');
-        this.$emit('enter');
+        this.$emit('enter', e);
       }
-    }
-  }
+    },
+  },
 });
 new Vue({
   el: '#app',
@@ -99,7 +99,16 @@ new Vue({
         input,
       });
       this.$set(this.$data, 'history', this.history);
-    }
+    },
+
+    enter(e){
+      const li = e.target.closest('li');
+      const next = li.nextElementSibling;
+      if( next ) {
+        next.querySelector('input').focus();
+      }
+    },
+
   },
   created() {
     this.gen();

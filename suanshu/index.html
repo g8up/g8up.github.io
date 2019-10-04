@@ -42,7 +42,7 @@
       }
       .v-question input {
         border: none;
-        border-bottom: 1px solid #f1f1f1;
+        border-bottom: 1px solid #6ce2f1;
         /* padding: 10px 5px; */
         box-sizing: border-box;
         padding-left: 5px;
@@ -111,6 +111,7 @@
                 :operation="item.operation"
                 :result="item.result"
                 v-model="item.input"
+                @enter="enter"
                 />
 						</li>
 					</ul>
