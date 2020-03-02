@@ -1,0 +1,113 @@
+html {
+  font-size: 64px
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Helvetica, "寰蒋闆呴粦";
+  background-color: #eee
+}
+
+.fixed-bg {
+  background-attachment: fixed;
+  background-position: center center;
+  background-repeat: no-repeat
+}
+
+.banner {
+  display: flex;
+  height: 100vh
+}
+
+.word-box {
+  margin: auto;
+  text-align: center
+}
+
+.word-box .slogon {
+  -webkit-text-stroke: 1px rgba(255, 152, 0, .23);
+  color: #fff;
+  font-size: .3rem
+}
+
+.btn {
+  margin-top: 23px;
+  color: #fff;
+  line-height: 55px;
+  background-color: #4d62bd;
+  text-decoration: none;
+  opacity: .9;
+  font-size: .2rem;
+  padding: .2rem;
+  border-radius: 4px;
+  box-shadow: 1px 1px 1px gray
+}
+
+.content {
+  height: 100vh;
+  background: #fff;
+  background: rgba(255, 255, 255, .7);
+  padding: .1rem;
+  text-align: center;
+  display: flex
+}
+
+.profile {
+  margin: auto
+}
+
+.profile .title {
+  font-size: .4rem
+}
+
+.profile .detail {
+  font-size: .3rem
+}
+
+.footer {
+  color: #aaa;
+  text-align: center;
+  background: gray;
+  font-size: .3rem;
+  padding: .2rem
+}
+
+.footer a,
+.footer a:hover,
+.footer a:visited {
+  color: #aaa;
+  text-decoration: none
+}
+
+@media (min-width:1100px) {
+  body {
+    background-image: url("https://fuss10.elemecdn.com/e/ea/d1c08eacfe080a4323ee2b2889bb8jpeg.jpeg")
+  }
+}
+
+@media (max-width:1100px) {
+  body {
+    background-image: url("https://fuss10.elemecdn.com/1/a6/e38bbb3783085e8d2e49d1259f6cejpeg.jpeg")
+  }
+
+  .word-box .slogon {
+    font-size: .6rem
+  }
+
+  .btn {
+    font-size: .4rem
+  }
+
+  .profile .title {
+    font-size: .6rem
+  }
+
+  .profile .detail {
+    font-size: .5rem
+  }
+
+  .fixed-bg {
+    background-size: cover
+  }
+}
