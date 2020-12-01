@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh-cmn">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>面包多 订单查询</title>
+  <link data-n-head="true" rel="icon" type="image/x-icon" href="https://cdn.2zimu.com/mianbaoduo/favicon.ico">
+  <style>
+    body {
+      color: #333;
+      --theme-color: #FF9800;
+    }
+
+    a,
+    a:visited {
+      text-decoration: none;
+      color: var(--theme-color);
+    }
+
+    a:hover {
+      border-bottom: 1px solid red;
+    }
+    h2{
+      color: var(--theme-color);
+    }
+    #orderId {
+      width: 32em;
+    }
+
+    span.item-title {
+      color: darkorange;
+    }
+
+    #result {
+      min-height: 300px;
+    }
+  </style>
+</head>
+
+<body>
+  <h2>面包多 订单查询</h2>
+  Order ID：<input type="text" id="orderId" maxLength="32" placeholder="请输入订单号，失焦触发查询">
+
+  <div id="result"></div>
+  <hr>
+  <button type="button" id="setKey">Set Key</button>
+  <span>获取 key：<a href="https://mianbaoduo.com/o/config/developer"
+      target="_blank">https://mianbaoduo.com/o/config/developer</a></span>
+  <hr>
+  <footer>
+    <div>工具订制，请联系<a href="https://mianbaoduo.com/o/dev" target="_blank">死宅程序员</a></div>
+  </footer>
+  <script src="g8up.js" type="module"></script>
+</body>
+
+</html>
