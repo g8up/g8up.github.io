@@ -65,37 +65,50 @@ $('#setKey').addEventListener('click', () => {
   }
 });
 
+$('#removeKey').addEventListener('click', () => {
+  localStorage.removeItem('key');
+});
+
 $('#orderId').addEventListener('change', (e) => {
   const orderId = $('#orderId').value;
   if (orderId) {
-    Service.getOrderDetail({
-        orderId,
-      }).then(order => {
-        const data = Object.entries(order).reduce((obj, cur) => {
-          const [key, val] = cur;
-          const {
-            text,
-            render,
-          } = StringRes[key] || {
-            text: key,
-            render: (val) => val,
-          };
+    if (orderId.length !== 32) {
+      alert('Order ID 长度应为 32 位');
+      return;
+    }
+    try {
+      Service.getOrderDetail({
+          orderId,
+        }).then(order => {
+          const data = Object.entries(order).reduce((obj, cur) => {
+            const [key, val] = cur;
+            const {
+              text,
+              render,
+            } = StringRes[key] || {
+              text: key,
+              render: (val) => val,
+            };
 
-          obj[text] = render(val);
-          return obj;
-        }, {});
+            obj[text] = render(val);
+            return obj;
+          }, {});
 
-        // $('#result').textContent = JSON.stringify(data, null, 2);
-        $('#result').innerHTML = render(data);
-      })
-      .catch(e => {
-        alert(e.message);
-      });
+          // $('#result').textContent = JSON.stringify(data, null, 2);
+          $('#result').innerHTML = render(data);
+        })
+        .catch(e => {
+          alert(e.message);
+        });
+
+    } catch (e) {
+      alert(e.message);
+    }
   }
 });
 
-const render = (data)=>{
-  return Object.entries(data).reduce((html, item)=>{
+const render = (data) => {
+  return Object.entries(data).reduce((html, item) => {
     const [key, val] = item;
     html += `<p>
       <span class="item-title">${key}</span>:

@@ -21,9 +21,11 @@
     a:hover {
       border-bottom: 1px solid red;
     }
-    h2{
+
+    h2 {
       color: var(--theme-color);
     }
+
     #orderId {
       width: 32em;
     }
@@ -36,6 +38,15 @@
       min-height: 300px;
     }
   </style>
+  <script>
+    var _hmt = _hmt || [];
+    (function () {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?1acdfa5410fac881da8707edf603a30d";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
 </head>
 
 <body>
@@ -44,13 +55,18 @@
 
   <div id="result"></div>
   <hr>
+
   <button type="button" id="setKey">Set Key</button>
-  <span>获取 key：<a href="https://mianbaoduo.com/o/config/developer"
-      target="_blank">https://mianbaoduo.com/o/config/developer</a></span>
+  <button type="button" id="removeKey">Remove Key</button>
+  <span>Get Key：
+    <a href="https://mianbaoduo.com/o/config/developer" target="_blank">https://mianbaoduo.com/o/config/developer</a>
+  </span>
   <hr>
+
   <footer>
     <div>工具订制，请联系<a href="https://mianbaoduo.com/o/dev" target="_blank">死宅程序员</a></div>
   </footer>
+
   <script src="g8up.js" type="module"></script>
 </body>
 
