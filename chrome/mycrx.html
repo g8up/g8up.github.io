@@ -49,32 +49,39 @@
 
   <script src="http://libs.baidu.com/jquery/2.0.3/jquery.min.js"></script>
   <script>
-    function setStyle(style, css) {
-      style.innerHTML = css;
+    function createStyle(cssText) {
+      const style = document.createElement('style');
+      style.appendChild(document.createTextNode(cssText));
+      return style;
     }
 
     function setRemGen() {
       var style;
+
       return function setRem(fontSize) {
-        console.log(fontSize)
+        console.log(fontSize);
         var css = 'html{font-size:' + fontSize + 'px!important;}';
+
         if (!style) {
-          style = document.createElement('style');
-          setStyle(style, css);
+          style = createStyle(css);
           document.head.appendChild(style);
         }
         else {
-          setStyle(style, css);
+          style.remove();
+          style = createStyle(css);
+          document.head.appendChild(style);
         }
       }
     }
 
     var setRem = setRemGen();
+
     function getRem() {
       return document.documentElement.clientWidth * devicePixelRatio / 10;
     }
 
     setRem(getRem());
+
     window.onresize = function () {
       setRem(getRem());
     };
@@ -120,6 +127,7 @@
         'download': 'http://g8up.cn/chrome/skipgoogleurl/'
       }
     ];
+
     var html = [];
 
     $.each(crx, function (index, val) {
@@ -135,6 +143,7 @@
         </aside>\
         <p class="desc">{desc}</p>\
       </article>';
+
       var itemHtml = temp.replace('{name}', name).replace('{desc}', desc).replace('详情', '<a href="' + (download || '##') + '" target="_blank">详情</a>');
       if (val.inlineInstall) {
         itemHtml = itemHtml.replace('{appid}', appid);
