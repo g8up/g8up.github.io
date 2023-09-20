@@ -1,46 +1,105 @@
-<!doctype html><html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"><meta http-equiv="X-UA-Compatible" content="ie=edge"><title>算术 - 虐娃神器</title><meta name="description" content="虐娃神器v2.0,专注于虐5～7岁儿童！"><meta name="author" content="g8up，2019.10.4"><link href="http://libs.baidu.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet"><script>var _hmt = _hmt || [];
-      (function() {
-        var hm = document.createElement("script");
-        hm.src = "//hm.baidu.com/hm.js?1acdfa5410fac881da8707edf603a30d";
-        var s = document.getElementsByTagName("script")[0];
-        s.parentNode.insertBefore(hm, s);
-      })();</script><style>body{
-        color: #333;
-        min-height: 100vh;
-      }
-      .top{
-        padding: 15px 0;
-        line-height: 36px;
-        position: sticky;
-        top: 0;
-        z-index: 1;
-        background: #ffffff;
-        background: #ffffffd6;
-        box-shadow: 0 1px 2px 2px #eee;
-        margin-bottom: 10px;
-      }
-      .gen{
-        padding:6px 40px;
-      }
-      .question{
-        text-align: center;
-      }
-      .v-question {
-        font-size: 20px;
-        display: flex;
-      }
-      .first,
-      .second{
-        display: inline-block;
-        width: 2em;
-        text-align: center;
-      }
-      .v-question input {
-        border: none;
-        border-bottom: 1px solid #6ce2f1;
-        /* padding: 10px 5px; */
-        box-sizing: border-box;
-        padding-left: 5px;
-        margin-left: 0.5em;
-        flex: 1;
-      }</style><template id="question"><div class="v-question"><span class="first" v-text="first"></span> <span class="operation" v-text="operation"></span> <span class="second" v-text="second"></span> <span>=</span><input v-model="input" type="number" autofocus @keypress="keypress" @blur="blur" :class="isCorrect ? 'alert-success' : 'alert-danger' "></div></template></head><body><div id="app" class="container"><div class="top row"><div class="col-md-4 col-xs-3"><select v-model="currentCategory" class="form-control" title="题目类型"><option v-for="(item, key) in questionCategories" :value="key" v-text="item"></option></select></div><div class="col-md-4 col-xs-3"><select v-model="level" class="form-control" title="难度级别"><option value="1">初</option><option value="2">中</option><option value="3">高</option></select></div><div class="col-md-2 col-xs-2"><span class="badge"><span style="color: #77f146;" v-text="finished"></span> / <span v-text="history.length"></span></span></div><div class="col-md-2 col-xs-2"><button type="button" @click="gen" :disabled="result === ''" class="btn btn-primary gen">出题</button></div></div><div class="row"><div class="col-md-12 list"><ul class="list-group"><li v-for="(item, index) in history" :key="`${item.first}-${item.second}`" class="list-group-item"><question :first="item.first" :second="item.second" :operation="item.operation" :result="item.result" v-model="item.input" @enter="enter" @blur="soundNotify"/></li></ul></div></div></div><script src="https://cdn.staticfile.org/vue/2.6.11/vue.min.js"></script><script src="g8up.cn.js"></script></body></html>
+<!doctype html>
+<html lang="zh-cmn">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>算术 - 虐娃神器</title>
+  <meta name="description" content="虐娃神器v2.0,专注于虐5～7岁儿童！">
+  <meta name="author" content="g8up，2019.10.4">
+  <link href="//libs.baidu.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">
+  <script>var _hmt = _hmt || [];
+    (function () {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?1acdfa5410fac881da8707edf603a30d";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();</script>
+  <style>
+    body {
+      color: #333;
+      min-height: 100vh;
+    }
+
+    .top {
+      padding: 15px 0;
+      line-height: 36px;
+      position: sticky;
+      top: 0;
+      z-index: 1;
+      background: #ffffff;
+      background: #ffffffd6;
+      box-shadow: 0 1px 2px 2px #eee;
+      margin-bottom: 10px;
+    }
+
+    .gen {
+      padding: 6px 40px;
+    }
+
+    .question {
+      text-align: center;
+    }
+
+    .v-question {
+      font-size: 20px;
+      display: flex;
+    }
+
+    .first,
+    .second {
+      display: inline-block;
+      width: 2em;
+      text-align: center;
+    }
+
+    .v-question input {
+      border: none;
+      border-bottom: 1px solid #6ce2f1;
+      /* padding: 10px 5px; */
+      box-sizing: border-box;
+      padding-left: 5px;
+      margin-left: 0.5em;
+      flex: 1;
+    }
+  </style><template id="question">
+    <div class="v-question"><span class="first" v-text="first"></span> <span class="operation"
+        v-text="operation"></span> <span class="second" v-text="second"></span> <span>=</span><input v-model="input"
+        type="number" autofocus @keypress="keypress" @blur="blur"
+        :class="isCorrect ? 'alert-success' : 'alert-danger' "></div>
+  </template>
+</head>
+
+<body>
+  <div id="app" class="container">
+    <div class="top row">
+      <div class="col-md-4 col-xs-3"><select v-model="currentCategory" class="form-control" title="题目类型">
+          <option v-for="(item, key) in questionCategories" :value="key" v-text="item"></option>
+        </select></div>
+      <div class="col-md-4 col-xs-3"><select v-model="level" class="form-control" title="难度级别">
+          <option value="1">初</option>
+          <option value="2">中</option>
+          <option value="3">高</option>
+        </select></div>
+      <div class="col-md-2 col-xs-2"><span class="badge"><span style="color: #77f146;" v-text="finished"></span> / <span
+            v-text="history.length"></span></span></div>
+      <div class="col-md-2 col-xs-2"><button type="button" @click="gen" :disabled="result === ''"
+          class="btn btn-primary gen">出题</button></div>
+    </div>
+    <div class="row">
+      <div class="col-md-12 list">
+        <ul class="list-group">
+          <li v-for="(item, index) in history" :key="`${item.first}-${item.second}`" class="list-group-item">
+            <question :first="item.first" :second="item.second" :operation="item.operation" :result="item.result"
+              v-model="item.input" @enter="enter" @blur="soundNotify" />
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <script src="https://cdn.staticfile.org/vue/2.6.11/vue.min.js"></script>
+  <script src="g8up.cn.js"></script>
+</body>
+
+</html>
